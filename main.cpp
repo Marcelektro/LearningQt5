@@ -3,6 +3,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QMessageBox>
+#include <QLabel>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -22,6 +23,9 @@ int main(int argc, char *argv[]) {
 
     QVBoxLayout layout;
     layout.setAlignment(Qt::AlignCenter);
+
+    QLabel line("Hello, world! :D");
+    layout.addWidget(&line);
 
     QPushButton button("Click Me!");
     layout.addWidget(&button);
