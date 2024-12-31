@@ -20,6 +20,8 @@ int main(int argc, char *argv[]) {
     QWidget window;
     window.setWindowTitle("Hello QT5");
     window.resize(854, 480);
+    //window.setWindowFlag(Qt::FramelessWindowHint); // remove window top bar
+
 
     QVBoxLayout layout;
     layout.setAlignment(Qt::AlignCenter);
