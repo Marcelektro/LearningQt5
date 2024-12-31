@@ -1,0 +1,27 @@
+name: Linux build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Prepare environment
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential cmake qt5-default qtbase5-dev 
+
+      - name: Build
+        run: |
+          bash ./build/build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-artifacts
+          path: ./dist/LearningQt5
