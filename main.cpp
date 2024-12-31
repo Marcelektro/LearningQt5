@@ -24,8 +24,17 @@ int main(int argc, char *argv[]) {
     QVBoxLayout layout;
     layout.setAlignment(Qt::AlignCenter);
 
-    QLabel line("Hello, world! :D");
-    layout.addWidget(&line);
+    QLabel headerLine("Hello, world! :D");
+    headerLine.setAlignment(Qt::AlignCenter);
+    const QFont headerLineFont("Arial", 50);
+    headerLine.setFont(headerLineFont);
+    layout.addWidget(&headerLine);
+
+    QLabel subHeaderLine("Click the button below to see a message box.");
+    subHeaderLine.setAlignment(Qt::AlignCenter);
+    subHeaderLine.setStyleSheet("font-size: 15pt; margin-bottom: 20px;");
+    layout.addWidget(&subHeaderLine);
+
 
     QPushButton button("Click Me!");
     layout.addWidget(&button);
